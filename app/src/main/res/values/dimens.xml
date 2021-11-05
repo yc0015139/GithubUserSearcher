@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="itemTextSize">18sp</dimen>
+    <dimen name="itemMarginSize">14dp</dimen>
+    <dimen name="itemFixedHeight">120dp</dimen>
+</resources>

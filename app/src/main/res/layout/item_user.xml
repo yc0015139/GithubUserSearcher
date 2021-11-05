@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="dev.yc.githubusersearcher.model.user.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/itemFixedHeight"
+        android:layout_marginStart="@dimen/itemMarginSize"
+        android:layout_marginTop="@dimen/itemMarginSize"
+        android:layout_marginEnd="@dimen/itemMarginSize"
+        android:layout_marginBottom="@dimen/itemMarginSize">
+
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="?attr/colorSurface"
+            app:circleCrop="@{true}"
+            app:imageUrl="@{user.avatarUrl}"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}"
+            android:textAlignment="center"
+            android:textSize="@dimen/itemTextSize"
+            android:singleLine="true"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="user name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
