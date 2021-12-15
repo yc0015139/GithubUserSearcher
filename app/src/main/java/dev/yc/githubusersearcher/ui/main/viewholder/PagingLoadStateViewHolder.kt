@@ -22,8 +22,8 @@ class PagingLoadStateViewHolder(
             btnRefresh.isVisible = loadState is LoadState.Error
 
             tvMessage.run {
-                isVisible = !(loadState as? LoadState.Error)?.error?.message.isNullOrBlank()
-                text = (loadState as? LoadState.Error)?.error?.message
+                isVisible = !(loadState as LoadState.Error).error.message.isNullOrBlank()
+                text = loadState.error.message
             }
         }
     }

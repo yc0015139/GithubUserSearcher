@@ -65,9 +65,10 @@ class MainFragment : Fragment(), TextView.OnEditorActionListener {
     private fun setupLoadStateEventFromAdapter(userAdapter: UserAdapter) {
         lifecycleScope.launch {
             userAdapter.loadStateFlow.collectLatest {
+                // FIXME: Not working now
                 val isNoDataWithError =
                     it.append is LoadState.NotLoading && it.refresh is LoadState.Error
-
+                binding.tilSearch.isErrorEnabled = isNoDataWithError
             }
         }
     }
